@@ -13,6 +13,7 @@ Source:     http://optusnet.dl.sourceforge.net/sourceforge/ipmiutil/%{name}-%{ve
 BuildRequires:  freeipmi-devel
 BuildRequires:  openssl-devel
 ExcludeArch:    ppc
+BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 The ipmiutil component package provides utilities to view the SEL (showsel), 
