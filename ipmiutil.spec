@@ -10,6 +10,7 @@ License:    BSD
 Group:      System/Kernel and hardware
 Url:	    http://ipmiutil.sourceforge.net/
 Source:     http://optusnet.dl.sourceforge.net/sourceforge/ipmiutil/%{name}-%{version}.tar.bz2
+Patch0:		ipmiutil-1.9.2-fix-str-fmt.patch
 BuildRequires:  freeipmi-devel
 BuildRequires:  openssl-devel
 ExcludeArch:    ppc
@@ -27,9 +28,10 @@ or the valinux IPMI driver (/dev/ipmikcs).
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-%configure
+%configure2_5x
 make
 
 %install
