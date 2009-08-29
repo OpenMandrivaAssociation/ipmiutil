@@ -1,6 +1,6 @@
 %define name    ipmiutil
-%define version	1.9.2
-%define release %mkrel 2
+%define version	2.4.1
+%define release %mkrel 1
 
 Name:       %name
 Version:    %version
@@ -9,8 +9,9 @@ Summary:    A package that includes various IPMI server management utilities
 License:    BSD
 Group:      System/Kernel and hardware
 Url:	    http://ipmiutil.sourceforge.net/
-Source:     http://optusnet.dl.sourceforge.net/sourceforge/ipmiutil/%{name}-%{version}.tar.bz2
-Patch0:		ipmiutil-1.9.2-fix-str-fmt.patch
+Source:     http://optusnet.dl.sourceforge.net/sourceforge/ipmiutil/%{name}-%{version}.tar.gz
+Patch1:         ipmiutil-2.4.1-fix-format-errors.patch
+Patch2:         ipmiutil-2.4.1-fix-getline-conflict.patch
 BuildRequires:  freeipmi-devel
 BuildRequires:  openssl-devel
 ExcludeArch:    ppc
@@ -28,7 +29,8 @@ or the valinux IPMI driver (/dev/ipmikcs).
 
 %prep
 %setup -q
-%patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 %build
 %configure2_5x
@@ -70,5 +72,7 @@ fi
 %{_sbindir}/*
 %{_datadir}/%{name}
 %{_mandir}/man8/*
-
-
+%config(noreplace) %{_sysconfdir}/cron.daily/checksel
+%{_initrddir}/ipmi_port
+%{_initrddir}/ipmiutil_asy
+%{_initrddir}/ipmiutil_wdt
