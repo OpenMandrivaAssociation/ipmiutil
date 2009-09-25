@@ -1,6 +1,6 @@
 %define name    ipmiutil
 %define version	2.4.1
-%define release %mkrel 2
+%define release %mkrel 3
 
 Name:       %name
 Version:    %version
@@ -14,7 +14,7 @@ Patch1:         ipmiutil-2.4.1-fix-format-errors.patch
 Patch2:         ipmiutil-2.4.1-fix-getline-conflict.patch
 BuildRequires:  freeipmi-devel
 BuildRequires:  openssl-devel
-ExcludeArch:    ppc
+ExcludeArch:    ppc %mips %arm
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
