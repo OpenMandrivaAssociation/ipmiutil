@@ -1,6 +1,6 @@
 %define name    ipmiutil
 %define version	2.4.1
-%define release %mkrel 5
+%define release %mkrel 6
 
 Name:       %name
 Version:    %version
