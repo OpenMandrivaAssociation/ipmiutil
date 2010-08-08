@@ -1,5 +1,5 @@
 %define name    ipmiutil
-%define version	2.6.3
+%define version	2.6.8
 %define release %mkrel 1
 
 Name:       %name
@@ -10,6 +10,7 @@ License:    BSD
 Group:      System/Kernel and hardware
 Url:	    http://ipmiutil.sourceforge.net/
 Source:     http://optusnet.dl.sourceforge.net/sourceforge/ipmiutil/%{name}-%{version}.tar.gz
+Patch:      ipmiutil-2.6.8-fix-format-errors.patch
 BuildRequires:  freeipmi-devel
 BuildRequires:  openssl-devel
 ExcludeArch:    ppc %mips %arm
@@ -27,6 +28,7 @@ or the valinux IPMI driver (/dev/ipmikcs).
 
 %prep
 %setup -q
+%patch -p 1
 
 %build
 %configure2_5x --enable-gpl --disable-nongpl
@@ -72,3 +74,4 @@ fi
 %{_initrddir}/ipmi_port
 %{_initrddir}/ipmiutil_asy
 %{_initrddir}/ipmiutil_wdt
+%{_initrddir}/ipmiutil_evt
