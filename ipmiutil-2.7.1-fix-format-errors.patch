@@ -1,0 +1,45 @@
+diff -Naur -x '*~' -x '*.orig' ipmiutil-2.7.1/util/ievents.c ipmiutil-2.7.1-fix-format-errors/util/ievents.c
+--- ipmiutil-2.7.1/util/ievents.c	2010-10-18 20:55:48.000000000 +0000
++++ ipmiutil-2.7.1-fix-format-errors/util/ievents.c	2010-12-27 11:17:12.000000000 +0000
+@@ -1611,7 +1611,7 @@
+ 	 printf("Cannot open file %s\n",raw_file);
+ 	 return(-1);
+       } else {
+-         printf(evt_hdr); /*"RecId Date/Time_______*/
++         printf("%s", evt_hdr); /*"RecId Date/Time_______*/
+ 	 if (mode == 1) { /*ascii raw*/
+ 	    if (fdebug)
+                 printf("decoding raw ascii file with IPMI event bytes\n");
+@@ -1844,7 +1844,7 @@
+       show_sel_opts(2,0, NULL,fdebug);
+       decode_sel_entry(buf,msg,sizeof(msg));
+       /* show header for the event record */
+-      printf(evt_hdr); /*"RecId Date/Time_______*/
++      printf("%s", evt_hdr); /*"RecId Date/Time_______*/
+       printf("%s", msg);
+    }
+ do_exit:
+diff -Naur -x '*~' -x '*.orig' ipmiutil-2.7.1/util/ihpm.c ipmiutil-2.7.1-fix-format-errors/util/ihpm.c
+--- ipmiutil-2.7.1/util/ihpm.c	2010-10-18 20:55:48.000000000 +0000
++++ ipmiutil-2.7.1-fix-format-errors/util/ihpm.c	2010-12-27 11:18:58.000000000 +0000
+@@ -1086,7 +1086,7 @@
+ int HpmGetUserInput(char *str)
+ {
+     char userInput[2];
+-    printf(str);
++    printf("%s", str);
+     scanf("%s",userInput);
+     if (toupper(userInput[0]) == 'Y')
+     {
+diff -Naur -x '*~' -x '*.orig' ipmiutil-2.7.1/util/isel.c ipmiutil-2.7.1-fix-format-errors/util/isel.c
+--- ipmiutil-2.7.1/util/isel.c	2010-10-18 20:55:48.000000000 +0000
++++ ipmiutil-2.7.1-fix-format-errors/util/isel.c	2010-12-27 11:17:12.000000000 +0000
+@@ -511,7 +511,7 @@
+ 				pSelRecord->record_id,recid0);
+         }
+ 	/* show header for the SEL records */
+-        printf(evt_hdr);  /*RecId Date/Time_______ */
++        printf("%s", evt_hdr);  /*RecId Date/Time_______ */
+ 	while( rc == 0 ) {
+ 		rc = GetSelEntry( &RecordID, pSelRecord);
+ 		if (fwriteit && (rc != 0) && (RecordID == savid)) {
