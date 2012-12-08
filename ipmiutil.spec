@@ -1,6 +1,6 @@
 %define name    ipmiutil
 %define version	2.7.1
-%define release %mkrel 2
+%define release %mkrel 3
 
 Name:       %name
 Version:    %version
@@ -75,3 +75,85 @@ fi
 %{_initrddir}/ipmiutil_asy
 %{_initrddir}/ipmiutil_wdt
 %{_initrddir}/ipmiutil_evt
+
+
+%changelog
+* Wed May 04 2011 Oden Eriksson <oeriksson@mandriva.com> 2.7.1-2mdv2011.0
++ Revision: 665517
+- mass rebuild
+
+* Mon Dec 27 2010 Guillaume Rousse <guillomovitch@mandriva.org> 2.7.1-1mdv2011.0
++ Revision: 625380
+- new version
+
+* Sun Aug 08 2010 Guillaume Rousse <guillomovitch@mandriva.org> 2.6.8-1mdv2011.0
++ Revision: 567754
+- new version
+
+* Wed Apr 28 2010 Funda Wang <fwang@mandriva.org> 2.6.3-1mdv2010.1
++ Revision: 539920
+- New version 2.6.3
+- patch against openssl is not needed
+
+* Wed Apr 21 2010 Funda Wang <fwang@mandriva.org> 2.6.2-1mdv2010.1
++ Revision: 537364
+- new version 2.6.2
+- build with openssl 1.0
+- rebuild
+- rebuild
+
+* Fri Feb 26 2010 Oden Eriksson <oeriksson@mandriva.com> 2.4.1-4mdv2010.1
++ Revision: 511578
+- rebuilt against openssl-0.9.8m
+
+* Fri Sep 25 2009 Olivier Blin <oblin@mandriva.com> 2.4.1-3mdv2010.0
++ Revision: 449107
+- do not build on mips & arm (from Arnaud Patard)
+
+* Wed Sep 02 2009 Christophe Fergeau <cfergeau@mandriva.com> 2.4.1-2mdv2010.0
++ Revision: 425370
+- rebuild
+
+  + Guillaume Rousse <guillomovitch@mandriva.org>
+    - new version
+
+* Thu Apr 09 2009 Funda Wang <fwang@mandriva.org> 1.9.2-2mdv2009.1
++ Revision: 365416
+- fix str fmt
+
+* Tue Jun 17 2008 Thierry Vignaud <tv@mandriva.org> 1.9.2-2mdv2009.0
++ Revision: 221636
+- rebuild
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Mon Dec 17 2007 Thierry Vignaud <tv@mandriva.org> 1.9.2-1mdv2008.1
++ Revision: 127110
+- kill re-definition of %%buildroot on Pixel's request
+
+
+* Wed Mar 14 2007 Guillaume Rousse <guillomovitch@mandriva.org> 1.9.2-1mdv2007.1
++ Revision: 143850
+- fix build dependencies
+- new version
+
+* Sat Dec 31 2005 Mandriva Linux Team <http://www.mandrivaexpert.com/> 1.6.4-2mdk
+- Rebuild
+
+* Tue Jun 14 2005 Erwan Velu <velu@seanodes.com> 1.6.4-1mdk
+- 1.6.4
+
+* Sat Apr 02 2005 Olivier Blin <oblin@mandrakesoft.com> 1.5.8-3mdk
+- Patch1: do not build against old freeipmi (and readline)
+- fix summary ended with dot
+
+* Wed Mar 16 2005 Christiaan Welvaart <cjw@daneel.dyndns.org> 1.5.8-2mdk
+- don't try to build on ppc (depends on freeipmi)
+
+* Thu Mar 03 2005 Erwan Velu <erwan@seanodes.com> 1.5.8-1mdk
+- 1.5.8
+
+* Thu Aug 19 2004 Erwan Velu <erwan@mandrakesoft.com> 1.4.8-1mdk
+- Initial release
+
