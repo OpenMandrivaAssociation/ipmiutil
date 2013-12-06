@@ -1,7 +1,7 @@
 Summary:	A package that includes various IPMI server management utilities
 Name:		ipmiutil
 Version:	2.7.1
-Release:	6
+Release:	7
 License:	BSD
 Group:		System/Kernel and hardware
 Url:		http://ipmiutil.sourceforge.net/
