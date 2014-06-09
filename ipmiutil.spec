@@ -31,7 +31,7 @@ or the Intel IPMI driver (/dev/imb), etc.  If used locally and no driver is
 detected, ipmiutil will use user-space direct I/Os instead.
 
 %package devel
-Group:    Development/Libraries
+Group:    Development/C
 Summary:  Includes libraries and headers for the ipmiutil package
 
 Provides: ipmiutil-static = %{version}-%{release}
