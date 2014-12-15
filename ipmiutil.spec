@@ -1,11 +1,11 @@
 Name:      ipmiutil
-Version:   2.9.1
-Release:   4
+Version:   2.9.5
+Release:   1
 Summary:   Easy-to-use IPMI server management utilities
 
 License:   BSD
 Group:     System/Kernel and hardware
-Source:    http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source:    http://sourceforge.net/projects/ipmiutil/files/%{name}-%{version}.tar.gz
 URL:       http://ipmiutil.sourceforge.net
 Requires:  systemd-units
 BuildRequires: openssl-devel
