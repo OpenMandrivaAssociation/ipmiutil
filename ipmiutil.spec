@@ -1,6 +1,8 @@
+%define _disable_ld_no_undefined 1
+
 Name:      ipmiutil
-Version:   2.9.1
-Release:   4
+Version:   2.9.5
+Release:   1
 Summary:   Easy-to-use IPMI server management utilities
 
 License:   BSD
@@ -44,7 +46,6 @@ useful for building custom IPMI applications.
 %setup -q
 
 %build
-autoreconf -fi
 %configure
 %make
 
@@ -67,6 +68,7 @@ autoreconf -fi
 %{_sbindir}/ilan 
 %{_sbindir}/ireset 
 %{_sbindir}/isel 
+%{_sbindir}/iseltime
 %{_sbindir}/isensor 
 %{_sbindir}/iserial 
 %{_sbindir}/isol 
@@ -107,7 +109,7 @@ autoreconf -fi
 %{_datadir}/%{name}/ievents.h
 %{_datadir}/%{name}/Makefile
 %{_includedir}/ipmicmd.h
-%{_libdir}/libipmiutil.a
+%{_libdir}/libipmiutil.*
 
 
 %post
