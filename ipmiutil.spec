@@ -46,6 +46,8 @@ useful for building custom IPMI applications.
 %setup -q
 
 %build
+export CC=gcc
+export CXX=g++
 %configure
 make
 
