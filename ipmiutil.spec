@@ -47,7 +47,7 @@ useful for building custom IPMI applications.
 
 %build
 %configure
-%make
+make
 
 %install
 %makeinstall_std
