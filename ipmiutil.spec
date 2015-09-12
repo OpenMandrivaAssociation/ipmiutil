@@ -2,7 +2,7 @@
 
 Name:      ipmiutil
 Version:   2.9.5
-Release:   2
+Release:   3
 Summary:   Easy-to-use IPMI server management utilities
 
 License:   BSD
