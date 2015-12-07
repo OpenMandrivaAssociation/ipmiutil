@@ -2,5 +2,6 @@ removed_sources:
   ipmiutil-2.7.1.tar.gz: 8603f1ac194509a12001a692b2b0d82d1fe792cd
   ipmiutil-2.9.1.tar.gz: f23fabe8339842fea9b8c2a601717dc002e44a9d
   ipmiutil-2.9.3.tar.gz: a075d14ce4e00efee7e95d8be52f14df50817c71
-sources:
   ipmiutil-2.9.5.tar.gz: 265f022c876da373b2ecb4be2bc0f98e65f70977
+sources:
+  ipmiutil-2.9.7.tar.gz: cc26d977afc87717812ef25aa02b2d5ab84843c4

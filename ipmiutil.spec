@@ -1,8 +1,11 @@
 %define _disable_ld_no_undefined 1
 
+%define libmajor 1
+%define libname %mklibname ipmiutil %{libmajor}
+
 Name:      ipmiutil
-Version:   2.9.5
-Release:   3
+Version:   2.9.7
+Release:   1
 Summary:   Easy-to-use IPMI server management utilities
 
 License:   BSD
@@ -37,6 +40,7 @@ Group:    Development/C
 Summary:  Includes libraries and headers for the ipmiutil package
 
 Provides: ipmiutil-static = %{version}-%{release}
+Requires: %libname = %{version}-%{release}
 
 %description devel
 The ipmiutil-devel package contains headers and libraries which are
@@ -100,6 +104,8 @@ make
 %doc AUTHORS ChangeLog COPYING NEWS README TODO 
 %doc doc/UserGuide
 
+%libpackage ipmiutil %libmajor
+
 %files devel
 # %{_datadir}/%{name} is used by both ipmiutil and ipmituil-devel
 %dir %{_datadir}/%{name}
@@ -111,8 +117,8 @@ make
 %{_datadir}/%{name}/ievents.h
 %{_datadir}/%{name}/Makefile
 %{_includedir}/ipmicmd.h
-%{_libdir}/libipmiutil.*
-
+%{_libdir}/libipmiutil.so
+%{_libdir}/libipmiutil.a
 
 %post
 # POST_INSTALL, $1 = 1 if rpm -i, $1 = 2 if rpm -U
