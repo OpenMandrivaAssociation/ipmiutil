@@ -1,4 +1,5 @@
 %define _disable_ld_no_undefined 1
+%define _disable_rebuild_configure 1
 
 %define libmajor 1
 %define libname %mklibname ipmiutil %{libmajor}
