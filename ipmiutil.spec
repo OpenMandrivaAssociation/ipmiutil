@@ -5,8 +5,8 @@
 %define libname %mklibname ipmiutil %{libmajor}
 
 Name:      ipmiutil
-Version:   2.9.7
-Release:   2
+Version:   3.1.7
+Release:   1
 Summary:   Easy-to-use IPMI server management utilities
 
 License:   BSD
@@ -14,9 +14,7 @@ Group:     System/Kernel and hardware
 Source:    http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 URL:       http://ipmiutil.sourceforge.net
 Requires:  systemd-units
-BuildRequires: openssl-devel
-BuildRequires: gcc
-BuildRequires: gcc-c++
+BuildRequires: pkgconfig(openssl)
 BuildRequires: libtool
 BuildRequires: autoconf
 
@@ -48,16 +46,14 @@ The ipmiutil-devel package contains headers and libraries which are
 useful for building custom IPMI applications.
 
 %prep
-%setup -q
+%autosetup -p1
+%configure
 
 %build
-export CC=gcc
-export CXX=g++
-%configure
-make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %dir %{_datadir}/%{name}
@@ -79,6 +75,7 @@ make
 %{_sbindir}/isensor 
 %{_sbindir}/iserial 
 %{_sbindir}/isol 
+%{_sbindir}/iuser
 %{_sbindir}/iwdt 
 %{_sbindir}/ipicmg 
 %{_sbindir}/ifirewall 
@@ -94,7 +91,6 @@ make
 %{systemd_fls}/ipmiutil_asy.service
 %{systemd_fls}/ipmiutil_wdt.service
 %{systemd_fls}/ipmi_port.service
-%{_datadir}/%{name}/ipmiutil.env
 %{_datadir}/%{name}/ipmiutil.pre
 %{_datadir}/%{name}/ipmiutil.setup
 %{_datadir}/%{name}/ipmi_if.sh
@@ -117,6 +113,7 @@ make
 %{_datadir}/%{name}/isensor.h
 %{_datadir}/%{name}/ievents.h
 %{_datadir}/%{name}/Makefile
+%{_datadir}/%{name}/ipmiutil.env.template
 %{_includedir}/ipmicmd.h
 %{_libdir}/libipmiutil.so
 %{_libdir}/libipmiutil.a
