@@ -5,8 +5,8 @@
 %define libname %mklibname ipmiutil %{libmajor}
 
 Name:      ipmiutil
-Version:   3.1.7
-Release:   1
+Version:	3.1.8
+Release:	1
 Summary:   Easy-to-use IPMI server management utilities
 
 License:   BSD
