@@ -6,7 +6,7 @@
 
 Name:      ipmiutil
 Version:	3.1.8
-Release:	1
+Release:	2
 Summary:   Easy-to-use IPMI server management utilities
 
 License:   BSD
