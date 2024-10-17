@@ -12,7 +12,7 @@ Summary:   Easy-to-use IPMI server management utilities
 License:   BSD
 Group:     System/Kernel and hardware
 Source:    http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-URL:       http://ipmiutil.sourceforge.net
+URL:       https://ipmiutil.sourceforge.net
 Requires:  systemd-units
 BuildRequires: pkgconfig(openssl)
 BuildRequires: libtool
