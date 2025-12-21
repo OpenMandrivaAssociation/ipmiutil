@@ -14,6 +14,10 @@ Group:     System/Kernel and hardware
 Source:    http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 URL:       https://ipmiutil.sourceforge.net
 Requires:  systemd-units
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: pkgconfig(openssl)
 BuildRequires: libtool
 BuildRequires: autoconf
